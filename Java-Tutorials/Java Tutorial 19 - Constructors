@@ -1,0 +1,42 @@
+/* YouTube Link: */
+
+
+////////////////////////
+// BankAccount Class //
+///////////////////////
+
+public class BankAccount {
+	
+	int accountNumber;
+	
+	String accountHolder;
+	
+	double balance = 250.00;
+	
+	public BankAccount(int acctNum, String actName){
+		
+		accountNumber = acctNum;
+		accountHolder = actName;
+		
+	}
+	
+}
+
+
+/////////////////
+// Main Class //
+////////////////
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		
+		BankAccount myAccount = new BankAccount(9876, "John");
+		
+		System.out.println(myAccount.accountNumber);
+		System.out.println(myAccount.accountHolder);
+	}
+	
+}
+
