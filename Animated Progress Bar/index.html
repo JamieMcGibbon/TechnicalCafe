@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animated Loading Bar</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <style>
+        .bar_container{
+            width: 50%;
+            margin: 0px auto;
+            margin-top: 20px;
+        }
+        /* #progress_one{
+            width: 10%;
+        } */
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+
+    <!-- Create container to hold the progress bar -->
+    <div class="bar_container">
+        <!-- Add "Loading..." text above the progress bar -->
+        Loading...
+        <!-- Use the Bootstrap "progress" class to create the progress bar div -->
+        <div class="progress">
+            <!-- Use the Bootstrap "progress-bar" classes to create the actual progres bar -->
+            <div class="progress-bar progress-bar-striped" id="progress_one" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br />
+        <!-- Create a button that will load the progress bar upon clicking -->
+        <button type="button" onclick="load_bar()">Load</button>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+        // Start the progress bar with a width of 0%
+        let num = 0;
+
+        // Create a function that will cause the bar to load at a speed of 50 ms
+        function load_bar(){
+           // Call the "load()" function ever 50 ms
+           window.setInterval(load, 50);
+        }
+
+        // Function that actually loads the blue striped progress bar
+        function load(){
+            // Add 10% for each iteration of the function (should be 10 iterations in total)
+            num += 10;
+            // Create a variable that will be used to define the width of the progress bar as a percentage
+            let percent_loaded = num + "%";
+
+            // If the percentage of the progress bar that is loaded === 100, stop the iteration
+            if(num === 100){
+                clearInterval();
+            }
+            // Continue the iteration as long as the value of num < 100
+            else{
+                document.getElementById("progress_one").style.width = percent_loaded;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
