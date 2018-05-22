@@ -6,23 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Animated Loading Bar</title>
 
+    <!-- Add Bootstrap CSS styles from Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <style>
-        .bar_container{
-            width: 50%;
-            margin: 0px auto;
-            margin-top: 20px;
-        }
-        /* #progress_one{
-            width: 10%;
-        } */
-
-    </style>
-
-
-
-
+    <!-- Add our own custom CSS code -->
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
@@ -41,38 +29,9 @@
         <button type="button" onclick="load_bar()">Load</button>
     </div>
 
+    <!-- Include the JavaScript file that's used to animate the progress bar -->
+    <script type='text/javascript' src="script.js"></script>
 
-
-
-    <script type="text/javascript">
-
-        // Start the progress bar with a width of 0%
-        let num = 0;
-
-        // Create a function that will cause the bar to load at a speed of 50 ms
-        function load_bar(){
-           // Call the "load()" function ever 50 ms
-           window.setInterval(load, 50);
-        }
-
-        // Function that actually loads the blue striped progress bar
-        function load(){
-            // Add 10% for each iteration of the function (should be 10 iterations in total)
-            num += 10;
-            // Create a variable that will be used to define the width of the progress bar as a percentage
-            let percent_loaded = num + "%";
-
-            // If the percentage of the progress bar that is loaded === 100, stop the iteration
-            if(num === 100){
-                clearInterval();
-            }
-            // Continue the iteration as long as the value of num < 100
-            else{
-                document.getElementById("progress_one").style.width = percent_loaded;
-            }
-        }
-
-    </script>
 
 </body>
 </html>
