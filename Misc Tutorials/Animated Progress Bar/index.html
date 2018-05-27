@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Animated Loading Bar</title>
+    <title>Animated Progress Bar</title>
 
-    <!-- Add Bootstrap CSS styles from Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
-    <!-- Add our own custom CSS code -->
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
 
-    <!-- Create container to hold the progress bar -->
     <div class="bar_container">
-        <!-- Add "Loading..." text above the progress bar -->
         Loading...
-        <!-- Use the Bootstrap "progress" class to create the progress bar div -->
         <div class="progress">
-            <!-- Use the Bootstrap "progress-bar" classes to create the actual progres bar -->
             <div class="progress-bar progress-bar-striped" id="progress_one" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
+
         <br />
-        <!-- Create a button that will load the progress bar upon clicking -->
         <button type="button" onclick="load_bar()">Load</button>
     </div>
 
-    <!-- Include the JavaScript file that's used to animate the progress bar -->
-    <script type='text/javascript' src="script.js"></script>
-
+    <script src="script.js"></script>
 
 </body>
 </html>
