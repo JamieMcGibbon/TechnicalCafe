@@ -9,6 +9,7 @@ function generate(){
 
     let password = "";
 
+    Math.random = () => {return window.crypto.getRandomValues(new Uint32Array(1))[0] / 4294967296; };
     //create for loop to choose password characters
     for(var i = 0; i <= complexity; i++){
         password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
